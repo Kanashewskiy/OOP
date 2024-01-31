@@ -12,25 +12,25 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
-        Publisher publisher = new JobAgency();
-        Company google = new Company("Google", publisher, 120000);
-        Company yandex = new Company("Yandex", publisher, 95000);
-        Company geekBrains = new Company("GeekBrains", publisher, 98000);
+        Publisher vacancy = new Vacancy();
+        Company google = new Company("Google", vacancy, 120000);
+        Company yandex = new Company("Yandex", vacancy, 95000);
+        Company geekBrains = new Company("GeekBrains", vacancy, 98000);
 
         Student student1 = new Student("Студент #1");
         Master master1 = new Master("Мастер #1");
         Master master2 = new Master("Мастер #2");
         Midle midle = new Midle("Мидл #1");
 
-        publisher.registerObserver(student1);
-        publisher.registerObserver(master1);
-        publisher.registerObserver(master2);
-        publisher.registerObserver(midle);
+        vacancy.registerObserver(student1);
+        vacancy.registerObserver(master1);
+        vacancy.registerObserver(master2);
+        vacancy.registerObserver(midle);
 
         for (int i = 0; i < 3; i++){
-            google.needEmployee();
-            yandex.needEmployee();
-            geekBrains.needEmployee();
+            google.newVacancy();
+            yandex.newVacancy();
+            geekBrains.newVacancy();
         }
 
     }

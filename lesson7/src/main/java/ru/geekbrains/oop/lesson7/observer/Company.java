@@ -8,21 +8,29 @@ import java.util.Random;
 public class Company {
 
     private Random random = new Random();
-    private Publisher jobAgency;
+    private Publisher vacancy;
 
     private String name;
 
     private int maxSalary;
 
-    public Company(String name, Publisher jobAgency, int maxSalary){
-        this.jobAgency = jobAgency;
+    public Company(String name, Publisher vacancy, int maxSalary){
+        this.vacancy = vacancy;
         this.name = name;
         this.maxSalary = maxSalary;
     }
 
+    /*
     public void needEmployee(){
         int salary = random.nextInt(maxSalary);
         jobAgency.sendOffer(name, salary);
+    }
+
+     */
+
+    public void newVacancy(){
+        int salary = random.nextInt(maxSalary);
+        vacancy.sendOffer(name, salary);
     }
 
 }
